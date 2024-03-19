@@ -378,7 +378,7 @@
     </ul>
     <p>Test permissions:</p>
     <ul>
-        <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li>
+        <!-- <li><a href="javascript:;" onclick="return DemoApp.requestLocation(this);">Request Location</a> <span></span></li> -->
         <li><a href="javascript:;" onclick="return DemoApp.requestVideo(this);">Request Video</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestAudio(this);">Request Audio</a> <span></span></li>
         <li><a href="javascript:;" onclick="return DemoApp.requestAudioVideo(this);">Request Audio+Video</a> <span></span></li>
@@ -648,18 +648,18 @@
         },
 
         // Permissions
-        requestLocation(el) {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    el.nextElementSibling.innerHTML = '(' + position.coords.latitude + ', ' + position.coords.longitude + ')';
-                    el.nextElementSibling.className = 'ok';
-                });
-            } else {
-                el.nextElementSibling.innerHTML = 'Geolocation is not supported in this browser.';
-                el.nextElementSibling.className = 'err';
-            }
-            return false;
-        },
+        // requestLocation(el) {
+        //     if (navigator.geolocation) {
+        //         navigator.geolocation.getCurrentPosition(function (position) {
+        //             el.nextElementSibling.innerHTML = '(' + position.coords.latitude + ', ' + position.coords.longitude + ')';
+        //             el.nextElementSibling.className = 'ok';
+        //         });
+        //     } else {
+        //         el.nextElementSibling.innerHTML = 'Geolocation is not supported in this browser.';
+        //         el.nextElementSibling.className = 'err';
+        //     }
+        //     return false;
+        // },
         requestVideo(el) {
             if (navigator.mediaDevices) {
                 navigator.mediaDevices.getUserMedia({audio: false, video: true}).then(function (stream) {
